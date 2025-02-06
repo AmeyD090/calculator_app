@@ -14,7 +14,7 @@ public class Calculator {
         double num2 = scanner.nextDouble();
 
         // Prompt the user to choose an operation
-        System.out.print("Enter '+' for addition, '-' for subtraction, or '*' for multiplication: ");
+        System.out.print("Enter '+' for addition, '-' for subtraction, '*' for multiplication, or '/' for division: ");
         char operation = scanner.next().charAt(0);
 
         // Perform the chosen operation
@@ -34,9 +34,19 @@ public class Calculator {
                 double product = num1 * num2;
                 System.out.println("The product of " + num1 + " and " + num2 + " is " + product);
                 break;
+            case '/':
+                // Check for division by zero
+                if (num2 != 0) {
+                    // Calculate and display the quotient
+                    double quotient = num1 / num2;
+                    System.out.println("The quotient of " + num1 + " divided by " + num2 + " is " + quotient);
+                } else {
+                    System.out.println("Error: Division by zero is not allowed.");
+                }
+                break;
             default:
                 // Handle invalid operation input
-                System.out.println("Invalid operation. Please enter '+', '-', or '*'.");
+                System.out.println("Invalid operation. Please enter '+', '-', '*', or '/'.");
                 break;
         }
 
